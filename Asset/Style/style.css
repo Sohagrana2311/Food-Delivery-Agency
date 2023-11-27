@@ -8,6 +8,7 @@
     --primary-color:#FF5331;
     --text--dark:#191720;
     --text-gray:#32303b;
+    --text-light-gray:#848385;
 }
 *{
     margin: 0;
@@ -36,6 +37,7 @@ body{
     font-family: 'Poppins', sans-serif;
     font-family: 'Roboto', sans-serif;
     background-color: var(--bg-light);
+    overflow-x: hidden;
 }
 
 header{
@@ -44,6 +46,7 @@ header{
     top: 0;
     left: 0;
     right: 0;
+    border: 1px solid red;
 }
 .navBer{
     display: flex;
@@ -95,11 +98,14 @@ header{
 }
 /* hero */
 .hero{
+    width: 100%;
     margin: 12rem 0;
+    border: 1px solid red;
 }
 .hero-container{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 6rem;
 }
 .hero-container .left {
@@ -162,13 +168,17 @@ header{
 }
 
 
+.hero-container .right{
+    border: 1px solid red;
+}
 .hero-container .right img{
-    max-width: 100%;
+   width: 100%;
 }
 /* dishes */
 
 .dishes{
     margin-bottom: 12rem;
+    border: 1px solid red;
 }
 .common-header{
     max-width: 40rem;
@@ -191,10 +201,12 @@ header{
 
 .dishes .top{
     display: flex;
+    /* flex-wrap: wrap; */
     align-items: center;
     justify-content: end;
     gap: 1rem;
     margin-top: 6rem;
+    border: 1px solid red;
 }
 
 .dishes .top .card{
@@ -226,7 +238,7 @@ header{
 .dishes .top .max-card h2{
     max-width: 30rem;
     text-align: left;
-    font-size: 2rem;
+    font-size: 2rem;margin-top: 1rem;
 }
 .dishes .top .max-card h2 .orange{
    color: var(--primary-color);
@@ -255,6 +267,7 @@ font-size: 6rem;
 
 .dishes .bottom{
     justify-content: left;
+    border: 1px solid red;
     
 }
 
@@ -373,6 +386,7 @@ font-size: 6rem;
     min-height: 20rem;
     display: flex;
     justify-content: space-between;
+    gap: 2rem;
     align-items: center;
 }
 .subscription-content h1{
@@ -416,10 +430,71 @@ font-size: 6rem;
 .subscribe-container button:hover{
     background-color: var(--bg-light);
 }
+/* footer  */
+
+footer{
+    background: #000;
+    padding: 8rem 0 4rem;
+}
+footer .footer-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(21rem,auto));
+    justify-content: space-between;
+    grid-column-gap: 1rem;
+    grid-row-gap: 4rem;
+}
+.footer-container .footer-img .company-logo{
+    margin-top: 8rem;
+        display: flex;
+}
+.footer-container .footer-img .company-logo img{
+    width: 10rem;
+    margin-right: 1rem;
+}
 
 
+footer .footer-container ul{
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+footer .footer-container ul h4{
+    font-size: 1.8rem;
+    color: var(--bg-light);
+}
+footer .footer-container ul a{
+    font-size: 1.6rem;
+    padding: .5rem 0;
+    color: var(--text-light-gray);
+    transition: .3s;
+}
+footer .footer-container ul a:hover{
+    color: var(--bg-light);
+    transform: translate(1rem);
+}
 
-
+footer .f-bottom{
+    margin-top: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .f-bottom small{
+    font-size: 1.4rem;
+    color: var(--text-light-gray);
+}
+footer .f-bottom ul{
+    /* color: var(--text-light-gray); */
+    
+}
+footer .f-bottom ul a{
+    font-size: 1.4rem;
+    margin-left: 1rem;
+    color: var(--text-light-gray);
+}
+footer .f-bottom ul a:hover{
+    color: var(--bg-light);
+}
 
 
 
@@ -435,13 +510,26 @@ font-size: 6rem;
     .container{
         max-width: 80%;
     }
-
+    .dishes .top .card{
+        padding: 2rem;
+        min-height: 18rem;
+    }
+    .dishes .top .max-card{
+        padding: 1rem;
+        min-width: 25rem;
+        min-height: 18rem;
+    }
 }
 @media (max-width:991px) {
-    
+    html{
+        font-size: 55%;
+    }
    
 }
 @media (max-width:767px) {
+    html{
+        font-size: 52.5%;
+    }
     .container{
         max-width: 90%;
     }
@@ -459,10 +547,50 @@ font-size: 6rem;
         max-width: 100%;
     
     }
+    .dishes .top{
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .order .order-container{
+        justify-content: center;
+    }
+    .subscribe .subscribe-container{
+        flex-direction: column;
+        padding: 4rem 0;
+        gap: 4rem;
+        text-align: center;
+    }
+    .subscribe-container .order-input{
+        width: 40rem;
+    
+    }
+
+    footer .footer-container .footer-img{
+         border: 1px solid red;
+    }
+    /* footer .footer-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+    } */
+    
+    
 }
 @media (max-width:480px) {
+    html{
+        font-size: 50%;
+    }
     .hero-container .left .order-input{
         width: 100%;
     }
+    .subscribe-container .order-input{
+        width: 30rem;
     
+    }
+    .subscribe-container input{
+        font-size: 1.2rem;
+    
+    }
 }
